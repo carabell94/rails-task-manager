@@ -1,11 +1,13 @@
-<%= form_for(@task) do |f| %>
-<%=f.label :title %>
-<%=f.text_field :title %>
-<%=f.label :details %>
-<%=f.text_field :details %>
-<%=f.label :completed %>
-<%=f.check_box :completed, {}, true, false %>
-<%= f.submit %>
-<% end %>
+<div class="form-group">
+  <%= form_for(@task) do |f| %>
+  <%=f.label :title %>
+  <%=f.text_field :title %>
+  <%=f.label :details %>
+  <%=f.text_field :details %>
+  <%=f.label :completed %>
+  <%=f.check_box :completed, {}, true, false %>
+  <%= f.submit %>
+  <% end %>
+</div>
 
-<%= link_to 'Back to Task List', tasks_path %>
+<%= link_to 'Back to Task List', tasks_path, class: 'btn btn-primary mb-2' %>

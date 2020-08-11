@@ -1,3 +1,17 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+h1, h2 {
+  font-family: arial;
+}
+
+li {
+  list-style-type: none;
+}
+
+#task-list {
+  display: inline;
+}
+
+
+

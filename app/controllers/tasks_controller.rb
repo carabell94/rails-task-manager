@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id]) # select the task by its ID
+    find_by_id
   end
 
   def new
@@ -22,17 +22,17 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id]) # select the task by its ID
+    find_by_id
   end
 
   def update
-    @task = Task.find(params[:id]) # select task by its iD
+    find_by_id
     @task.update(task_params) # update the task by selecting that specific task (with strong params too)
     redirect_to task_path(@task) # to show we have updated, redirects back
   end
 
   def destroy
-    @task = Task.find(params[:id]) # select the task by its ID
+    find_by_id
     @task.destroy
     redirect_to tasks_path # to show we have updated, redirects back
   end
@@ -41,5 +41,9 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :details, :completed)
+  end
+
+  def find_by_id
+    @task = Task.find(params[:id]) # select the task by its ID
   end
 end
