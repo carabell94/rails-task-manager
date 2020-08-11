@@ -1,0 +1,11 @@
+<h2><%= @task.title %></h2>
+<p>Details: <%= @task.details %></p>
+<p>Completed? <%= @task.completed %></p>
+
+<%= link_to 'Back to Task List', tasks_path %>
+<%= link_to 'Edit Task', tasks_edit_path(@task) %>
+<%= link_to task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete this task?" } do %>
+            Delete <i class="far fa-trash-alt"></i>
+            <% end %>
